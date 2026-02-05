@@ -23,10 +23,55 @@
     </header>
 
     <main>
-        <!-- Developer 1: Thêm form đăng nhập ở đây -->
         <section class="login-container">
-            <h2>Đăng Nhập</h2>
-            <p>TODO: Developer 1 - Tạo form đăng nhập với email và password</p>
+            <div class="login-box">
+                <div class="login-header">
+                    <span class="login-icon">🔐</span>
+                    <h2>Đăng Nhập</h2>
+                    <p>Vui lòng đăng nhập để tiếp tục</p>
+                </div>
+                
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email"
+                            placeholder="example@email.com" 
+                            required
+                        >
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Mật khẩu</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password"
+                            placeholder="Nhập mật khẩu của bạn" 
+                            required
+                        >
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Ghi nhớ đăng nhập</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-login">
+                        Đăng Nhập
+                    </button>
+                </form>
+
+                <div class="login-footer">
+                    <p><a href="../../index.html" class="back-link">← Quay về trang chủ</a></p>
+                </div>
+            </div>
         </section>
     </main>
 
