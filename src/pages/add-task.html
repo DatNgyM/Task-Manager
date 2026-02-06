@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/add-task.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -22,20 +24,57 @@
         </nav>
     </header>
 
-    <main>
-        <!-- Developer 3: Thêm form tạo task ở đây -->
-        <section class="add-task-container">
-            <h2>Thêm Công Việc Mới</h2>
-            <p>TODO: Developer 3 - Tạo form với các trường:</p>
-            <ul>
-                <li>Tiêu đề (required)</li>
-                <li>Mô tả</li>
-                <li>Độ ưu tiên (Thấp/Trung bình/Cao)</li>
-                <li>Deadline</li>
-                <li>Người phụ trách</li>
-            </ul>
-        </section>
+    <main class="container">
+        <h2>➕ Thêm Công Việc Mới</h2>
+
+        <form id="addTaskForm" class="task-form">
+            <div class="form-group">
+                <label for="title">Tiêu đề <span class="required">*</span></label>
+                <input type="text" id="title" required placeholder="Ví dụ: Hoàn thành báo cáo">
+                <span class="error" id="titleError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Mô tả</label>
+                <textarea id="description" rows="4" placeholder="Mô tả chi tiết..."></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="priority">Độ ưu tiên</label>
+                    <select id="priority">
+                        <option value="low">Thấp</option>
+                        <option value="medium" selected>Trung bình</option>
+                        <option value="high">Cao</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="deadline">Deadline</label>
+                    <input type="date" id="deadline">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="assignee">Người phụ trách</label>
+                <input type="text" id="assignee" placeholder="Tên người phụ trách">
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">✅ Thêm Công Việc</button>
+                <a href="task-list.html" class="btn btn-secondary">❌ Hủy</a>
+            </div>
+        </form>
     </main>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✅</div>
+            <h3>Thành công!</h3>
+            <p>Công việc đã được thêm</p>
+            <button class="btn btn-primary" onclick="window.location.href='task-list.html'">Xem danh sách</button>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2026 Task Manager. Dự án thực hành Git Workflow.</p>
@@ -44,4 +83,5 @@
     <script src="../js/main.js"></script>
     <script src="../js/add-task.js"></script>
 </body>
+
 </html>
