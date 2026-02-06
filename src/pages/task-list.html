@@ -22,12 +22,48 @@
         </nav>
     </header>
 
-    <main>
-        <!-- Developer 2: Thêm danh sách công việc ở đây -->
+    <main class="main-content">
+        <!-- Filters Section -->
+        <section class="filters-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <span class="filter-icon">📌</span> Tất Cả
+                </button>
+                <button class="filter-btn" data-filter="pending">
+                    <span class="filter-icon">⏳</span> Chưa Hoàn Thành
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                    <span class="filter-icon">✅</span> Đã Hoàn Thành
+                </button>
+            </div>
+            <a href="add-task.html" class="btn-primary">+ Thêm Công Việc</a>
+        </section>
+
+        <!-- Task List Container -->
         <section class="task-list-container">
             <h2>Danh Sách Công Việc</h2>
-            <p>TODO: Developer 2 - Hiển thị danh sách tasks từ localStorage</p>
-            <p>TODO: Developer 2 - Thêm filter và các nút action</p>
+            <div id="taskList" class="task-list">
+                <div class="empty-state">
+                    <p class="empty-icon">📭</p>
+                    <p class="empty-text">Không có công việc nào. Hãy thêm công việc mới!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <span class="stat-label">Tổng Cộng</span>
+                <span class="stat-value" id="totalTasks">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Đã Hoàn Thành</span>
+                <span class="stat-value completed" id="completedTasks">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Chưa Hoàn Thành</span>
+                <span class="stat-value pending" id="pendingTasks">0</span>
+            </div>
         </section>
     </main>
 
